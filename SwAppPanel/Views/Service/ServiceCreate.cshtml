@@ -1,0 +1,16 @@
+﻿@model SwAppViewModel.Panel.ServiceVM
+
+@using (Html.BeginForm("ServiceCreate", "Service", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ServiceTitle, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.ServiceDetails, new { @class = "ckeditor" }) <br/>
+        @Html.ValidationMessageFor(x => x.ServiceDetails, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

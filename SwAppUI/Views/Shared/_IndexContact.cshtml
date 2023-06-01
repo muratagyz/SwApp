@@ -1,0 +1,17 @@
+﻿@model SwAppViewModel.MultiUI.HomeMultiModel
+
+<div class="container-fluid py-0">
+    <div class="row contact-index">
+        <div class="col-12">
+            <h5 class="contact-index-title">Teklif ve Detaylar İçin</h5>
+            <form asp-action="SendMessage" asp-controller="Home">
+                <input type="text" asp-for="ContactMessage.Fullname" required class="form-control main-contact-textbox" placeholder="Ad Soyad"/>
+                <input type="email" asp-for="ContactMessage.Email" required class="form-control main-contact-textbox" placeholder="E-Posta Adresiniz"/>
+                <input type="text" asp-for="ContactMessage.Number" required class="form-control main-contact-textbox" placeholder="Telefon Numaranız"/>
+                <textarea asp-for="ContactMessage.Message" required class="form-control main-contact-textbox" rows="4" cols="50" placeholder="Mesajınız"></textarea>
+                <button class="btn btn-contact-index mt-3 form-control">Gönder</button>
+            </form>
+        </div>
+    </div>
+    @ViewBag.Message
+</div>

@@ -1,0 +1,62 @@
+﻿@model SwAppViewModel.MultiUI.ContactMultiModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<div class="bg-blue">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="topbar-title">BİZE ULAŞIN</h1>
+                @*      <h6 class="topbar-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor
+                    </h6>*@
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row p-4 p-md-0">
+        <div class="col-md-5 col-12 bg-light text-center p-5 contact-form-cont">
+            <h6 class="contact-title">Teklif ve Detaylar İçin</h6>
+            <form asp-action="SendMessage" asp-controller="Contact">
+                <input type="text" asp-for="ContactMessage.Fullname" required class="form-control contact-textbox" placeholder="Ad Soyad"/>
+                <input type="email" asp-for="ContactMessage.Email" required class="form-control contact-textbox" placeholder="E-Posta Adresiniz"/>
+                <input type="text" asp-for="ContactMessage.Number" required class="form-control contact-textbox" placeholder="Telefon Numaranız"/>
+                <textarea asp-for="ContactMessage.Message" required class="form-control contact-textbox" rows="4" cols="50" placeholder="Mesajınız"></textarea>
+                <button class="btn btn-contact mt-3 form-control">Gönder</button>
+            </form>
+        </div>
+        <div class="col-md-2 d-none d-md-block"></div>
+        <div class="col-md-5 col-12 bg-light p-5 contact-form-cont">
+            <p class="contact-subtitle-1"><i class="fa-solid fa-phone"></i> Bizi Arayın</p><br/>
+            @foreach (var item in Model.ContactInfoUI)
+            {
+                <p class="contact-subtitle-2">@Html.Raw(item.OfficeLocationName)</p>
+                <p class="contact-subtitle-3">
+                    @Html.Raw(item.OfficeLocationNumber)
+                </p>
+            }
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-0">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.389372559055!2d28.85665231568806!3d40.22264407534385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca0e206ddf4897%3A0x1fca487c99829216!2sSorsware%20Bili%C5%9Fim%20San.%20ve%20Tic.%20A.%C5%9E.!5e0!3m2!1str!2str!4v1655814733496!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div class="container">
+    <div class="row p-5">
+        <h3 class="contact-title-2">İLETİŞİM BİLGİLERİ</h3>
+        @foreach (var item in Model.ContactInformationUI)
+        {
+            <h5 class="contact-title-3">@item.ContactInformationTitle</h5>
+            <p class="contact-text">@Html.Raw(item.ContactInformationAddress)</p>
+            @if (item.ContactInformationDirection != null)
+            {
+                <h5 class="contact-title-3">Yol Tarifi</h5>
+                <p class="contact-text">
+                    @Html.Raw(item.ContactInformationDirection)
+                </p>
+            }
+        }
+    </div>
+</div>

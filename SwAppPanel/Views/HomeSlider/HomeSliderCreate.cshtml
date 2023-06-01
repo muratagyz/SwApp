@@ -1,0 +1,16 @@
+﻿@model SwAppViewModel.Panel.HomeSliderVM
+
+@using (Html.BeginForm("HomeSliderCreate", "HomeSlider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Label("Başlık")
+        @Html.TextAreaFor(x => x.HomeSliderTitle, new { @class = "ckeditor" })
+        @Html.ValidationMessageFor(x => x.HomeSliderTitle, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.HomeSliderDetails, new { @class = "ckeditor" }) <br/>
+        @Html.ValidationMessageFor(x => x.HomeSliderDetails, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

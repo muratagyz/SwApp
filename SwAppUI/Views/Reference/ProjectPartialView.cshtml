@@ -1,0 +1,17 @@
+﻿@model List<SwAppViewModel.UI.ProjectUI>
+
+@foreach (var item in Model)
+{
+    <div class="container mt-5">
+        <div class="row p-md-5 p-3">
+            <img src="~/@item.ProjectImageUrl"/>
+        </div>
+        <div class="row p-md-5 p-3">
+            <h6 class="reference-title mb-5">@Html.Raw(item.ProjectUrl)</h6>
+            <p class="reference-subtitle mb-2">@Html.Raw(item.ProjectCategory)</p>
+            <h6 class="reference-big-subtitle-2 mb-5">
+                @Html.Raw(item.ProjectDetails)
+            </h6>
+        </div>
+    </div>
+}

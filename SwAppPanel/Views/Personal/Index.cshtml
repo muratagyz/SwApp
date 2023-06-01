@@ -1,0 +1,43 @@
+﻿@model List<SwAppViewModel.Panel.PersonalVM>
+<a href="/Personal/PersonalCreate" style="color:white;">
+    <button type="button" class="btn btn-primary">Ekle</button>
+</a>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tam İsmi</th>
+        <th scope="col">Pozisyon</th>
+        <th scope="col">Resim Url</th>
+        <th scope="col">Oluşturma Tarihi</th>
+        <th scope="col">Güncelleme Tarihi</th>
+        <th scope="col">Durum</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.PersonalFullName</td>
+            <td>@item.PersonalPosition</td>
+            <td>@item.PersonalImageUrl</td>
+            <td>@item.CreatedDate</td>
+            <td>@item.UpdatedDate</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="/Personal/PersonalDelete/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-danger">Durumunu Değiştir</button>
+                </a>
+            </td>
+            <td>
+                <a href="/Personal/PersonalUpdate/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-warning">Güncelle</button>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

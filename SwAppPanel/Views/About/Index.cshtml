@@ -1,0 +1,34 @@
+﻿@model SwAppViewModel.Panel.AboutVM
+
+<div class="col-md-8">
+    <form asp-action="Index" method="post">
+        <div class="form-outline mb-4">
+            <input type="hidden" asp-for="Id" class="form-control form-control-lg"/>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" asp-for="AboutTitle">Başlık</label>
+            <input type="text" asp-for="AboutTitle" class="form-control form-control-lg"/>
+        </div>
+        <div class="form-outline mb-4">
+            <label class="form-label" asp-for="AboutDetails">Detay</label>
+            <textarea class="form-control form-control-lg ckeditor" asp-for="AboutDetails"></textarea>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="hidden" asp-for="CreatedDate" class="form-control form-control-lg"/>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="hidden" asp-for="UpdatedDate" class="form-control form-control-lg"/>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="hidden" asp-for="Status" class="form-control form-control-lg"/>
+        </div>
+
+        <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg float-left"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                Güncelle
+            </button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,47 @@
+﻿@model SwAppViewModel.MultiUI.AboutMultiModel
+@{
+    var x = 2;
+}
+
+<div class="row pt-3 pt-md-5 p-4 p-md-0">
+    @foreach (var item in Model.AboutSubTableUI)
+    {
+        @if (x % 2 == 0)
+        {
+            <div class="col-md-5 pb-5">
+                <div class="row">
+                    <div class="col-2 about-card-image">
+                        <img src="~/@item.AboutSubTableImageUrl" class="img-fluid pr-0 pt-2"/>
+                    </div>
+                    <div class="col-10 about-card-title fw-bold">@Html.Raw(item.AboutSubTableTitle)</div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <p class="about-card-text">
+                            @Html.Raw(item.AboutSubTableDetails)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-5 offset-md-2 p-md-0 pb-5">
+                <div class="row">
+                    <div class="col-2 about-card-image">
+                        <img src="~/@item.AboutSubTableImageUrl" class="img-fluid pr-0 pt-2"/>
+                    </div>
+                    <div class="col-10 about-card-title fw-bold">@Html.Raw(item.AboutSubTableTitle)</div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-10 offset-lg-2">
+                        <p class="about-card-text">
+                            @Html.Raw(item.AboutSubTableDetails)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        x++;
+    }
+</div>

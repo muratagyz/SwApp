@@ -1,0 +1,53 @@
+﻿@model SwAppViewModel.Panel.PanelRegisterVM
+@{
+    Layout = "_LayoutLogin";
+}
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form asp-action="Register" method="post">
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" asp-for="FirstName">Firstname</label>
+                        <input asp-for="FirstName" type="text" id="" class="form-control form-control-lg"
+                               placeholder="Enter a valid firstname"/><span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" asp-for="LastName">Lastname</label>
+                        <input asp-for="LastName" type="text" id="" class="form-control form-control-lg"
+                               placeholder="Enter a valid lastname"/><span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" asp-for="UserName">Username</label>
+                        <input asp-for="UserName" type="text" id="" class="form-control form-control-lg"
+                               placeholder="Enter a valid username"/><span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <label class="form-label" asp-for="Password">Password</label>
+                        <input asp-for="Password" type="password" id="" class="form-control form-control-lg"
+                               placeholder="Enter password"/><span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <span class="text-danger">@ViewBag.UserNameChangeError</span>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Register
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

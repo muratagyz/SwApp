@@ -1,0 +1,195 @@
+﻿@inject IHttpContextAccessor Acessor;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="~/img/logo_mobil.ico"/>
+
+    <title>Sorsware Panel</title>
+    <link rel="stylesheet" href="~/SwAppPanel.styles.css" asp-append-version="true"/>
+    <title>Sorsware</title>
+    <script src="https://kit.fontawesome.com/bb50464c78.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="~/Panel/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="~/Panel/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Panel/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="~/Panel/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="~/Panel/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="~/Panel/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="~/Panel/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Panel/build/css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title my-3" style="border: 0;">
+                    <a href="index.html" class="m-0 m-auto ">
+                        <img src="~/img/logo.png" class="img-fluid"/>
+                    </a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile clearfix">
+                    <div class="profile_pic">
+                        <img src="~/img/user-icon.png" alt="user-photo" class="img-circle profile_img img-fluid">
+                    </div>
+                    <div class="profile_info">
+                        <span>Hoşgeldiniz</span>
+                        <h2> @Acessor.HttpContext.Session.GetString("Fullname") </h2>
+                    </div>
+                </div>
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>Genel</h3>
+                        <ul class="nav side-menu">
+                            <li>
+                                <a><i class="fa fa-home"></i> Anasayfa <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>@Html.ActionLink("Slider", "Index", "HomeSlider")</li>
+                                    <li>@Html.ActionLink("Neden Sorsware ?", "Index", "HomeWhySorsware")</li>
+                                    <li>@Html.ActionLink("Neler yapıyoruz", "Index", "HomeWhatAreWeDoing")</a></li>
+                                    <li>@Html.ActionLink("Neler yapıyoruz Tablo", "Index", "HomeProjectWork")</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-building-o"></i> Kurumsal <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>@Html.ActionLink("Biz Kimiz ?", "Index", "AboutOurWho")</li>
+                                    <li>@Html.ActionLink("Hakkımızda", "Index", "About")</li>
+                                    <li>@Html.ActionLink("Hakkımızda Tablo", "Index", "AboutSubTable")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-briefcase"></i> Projeler <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>@Html.ActionLink("Projeler", "Index", "Project")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-table"></i> Çözümler <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>@Html.ActionLink("Hizmetler", "Index", "Service")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-compress"></i> İletişim <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>@Html.ActionLink("İletişim Numaraları", "Index", "ContactInfo")</li>
+                                    <li>@Html.ActionLink("İletişim Bilgileri", "Index", "ContactInformation")</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-user"></i> Kullanıcılar <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    @if (Acessor.HttpContext.Session.GetString("UserRole") == "Admin")
+                                    {
+                                        <li>@Html.ActionLink("Kullanıcılar", "Index", "User")</li>
+                                    }
+                                    <li>@Html.ActionLink("Personeller", "Index", "Personal")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- /sidebar menu -->
+
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                    <a id="menu_toggle">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <nav class="nav navbar-nav">
+                    <ul class=" navbar-right">
+                        <li class="nav-item dropdown open" style="padding-left: 15px;">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                @Acessor.HttpContext.Session.GetString("Fullname")
+                            </a>
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/Auth/logOut"><i class="fa fa-sign-out pull-right"></i> Çıkış Yap</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+        <!-- page content -->
+        <div class="right_col" role="main">
+            @RenderBody()
+        </div>
+        <!-- /page content -->
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Sorsware
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<!-- jQuery -->
+<script src="~/Panel/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="~/Panel/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="~/Panel/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="~/Panel/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="~/Panel/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="~/Panel/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="~/Panel/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="~/Panel/vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="~/Panel/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="~/Panel/vendors/Flot/jquery.flot.js"></script>
+<script src="~/Panel/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="~/Panel/vendors/Flot/jquery.flot.time.js"></script>
+<script src="~/Panel/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="~/Panel/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="~/Panel/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="~/Panel/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="~/Panel/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="~/Panel/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="~/Panel/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="~/Panel/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="~/Panel/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="~/Panel/vendors/moment/min/moment.min.js"></script>
+<script src="~/Panel/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="~/Panel/build/js/custom.min.js"></script>
+<script src="~/ckeditor/ckeditor.js"></script>
+@await RenderSectionAsync("Scripts", false)
+</body>
+</html>

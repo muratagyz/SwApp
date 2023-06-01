@@ -1,0 +1,16 @@
+﻿@model SwAppViewModel.Panel.PersonalVM
+
+@using (Html.BeginForm("PersonalCreate", "Personal", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Label("Tam İsmi")
+        @Html.TextBoxFor(x => x.PersonalFullName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonalFullName, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Pozisyon")
+        @Html.TextBoxFor(x => x.PersonalPosition, new { @class = "form-control" }) <br/>
+        @Html.ValidationMessageFor(x => x.PersonalPosition, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

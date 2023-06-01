@@ -1,0 +1,41 @@
+﻿@model List<SwAppViewModel.Panel.AboutSubTableVM>
+<a href="/AboutSubTable/AboutSubTableCreate" style="color:white;"<button type="button" class="btn btn-primary">Ekle</button></a>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Başlık</th>
+        <th scope="col">Detay</th>
+        <th scope="col">Resim Url</th>
+        <th scope="col">Oluşturma Tarihi</th>
+        <th scope="col">Güncelleme Tarihi</th>
+        <th scope="col">Durum</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.AboutSubTableTitle</td>
+            <td>@item.AboutSubTableDetails</td>
+            <td>@item.AboutSubTableImageUrl</td>
+            <td>@item.CreatedDate</td>
+            <td>@item.UpdatedDate</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="/AboutSubTable/AboutSubTableDelete/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-danger">Durumunu Değiştir</button>
+                </a>
+            </td>
+            <td>
+                <a href="/AboutSubTable/AboutSubTableUpdate/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-warning">Güncelle</button>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

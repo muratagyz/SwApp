@@ -1,0 +1,46 @@
+﻿@model List<SwAppViewModel.Panel.ProjectVM>
+
+<a href="/Project/ProjectCreate" style="color:white;">
+    <button type="button" class="btn btn-primary">Ekle</button>
+</a>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Url</th>
+        <th scope="col">Kategori</th>
+        <th scope="col">Detay</th>
+        <th scope="col">Resim Url</th>
+        <th scope="col">Oluşturma Tarihi</th>
+        <th scope="col">Güncelleme Tarihi</th>
+        <th scope="col">Durum</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.ProjectUrl</td>
+            <td>@item.ProjectCategory</td>
+            <td>@item.ProjectDetails</td>
+            <td>@item.ProjectImageUrl</td>
+            <td>@item.CreatedDate</td>
+            <td>@item.UpdatedDate</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="/Project/ProjectDelete/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-danger">Durumunu Değiştir</button>
+                </a>
+            </td>
+            <td>
+                <a href="/Project/ProjectUpdate/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-warning">Güncelle</button>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

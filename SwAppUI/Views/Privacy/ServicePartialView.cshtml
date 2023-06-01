@@ -1,0 +1,58 @@
+﻿@model List<SwAppViewModel.UI.ServiceUI>
+@{
+    var x = 2;
+}
+
+<div class="bg-blue">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="topbar-title">Hizmetler</h1>
+                <h6 class="topbar-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+@foreach (var item in Model)
+{
+    @if (x % 2 == 0)
+    {
+        <div class="bg-light">
+            <div class="container py-3">
+                <div class="row my-5 text-center text-md-start reference-row px-4 px-md-0">
+                    <div class="col-md-6">
+                        <p class="services-title mb-4">@Html.Raw(item.ServiceTitle)</p>
+                        <h2 class="services-desc mb-5">
+                            @Html.Raw(item.ServiceDetails)
+                        </h2>
+                        <button class="btn btn-reference">Daha Fazla Bilgi</button>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/@item.ServiceImageUrl" class="img-fluid mt-5"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container py-3">
+            <div class="row my-5 text-center text-md-start reference-row px-4 px-md-0">
+                <div class="col-md-6">
+                    <img src="~/@item.ServiceImageUrl" class="img-fluid mt-5"/>
+                </div>
+                <div class="col-md-6">
+                    <p class="services-title mb-4">@Html.Raw(item.ServiceTitle)</p>
+                    <h2 class="services-desc mb-5">
+                        @Html.Raw(item.ServiceDetails)
+                    </h2>
+                    <button class="btn btn-reference">Daha Fazla Bilgi</button>
+                </div>
+            </div>
+        </div>
+    }
+    x++;
+}

@@ -1,0 +1,19 @@
+﻿@model SwAppViewModel.Panel.ProjectVM
+
+@using (Html.BeginForm("ProjectCreate", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Label("Url")
+        @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProjectUrl, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Kategori")
+        @Html.TextBoxFor(x => x.ProjectCategory, new { @class = "form-control" }) <br/>
+        @Html.ValidationMessageFor(x => x.ProjectCategory, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.ProjectDetails, new { @class = "ckeditor" }) <br/>
+        @Html.ValidationMessageFor(x => x.ProjectDetails, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

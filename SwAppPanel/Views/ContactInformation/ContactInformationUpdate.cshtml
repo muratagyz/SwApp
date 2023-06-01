@@ -1,0 +1,22 @@
+﻿@model SwAppViewModel.Panel.ContactInformationVM
+
+@using (Html.BeginForm("ContactInformationUpdate", "ContactInformation", FormMethod.Post))
+{
+    <div class="form form-group">
+        @Html.Hidden("ID")
+        @Html.HiddenFor(x => x.Id, new { @class = "form-control" })<br/>
+        @Html.Label("Yer Adı")
+        @Html.TextBoxFor(x => x.ContactInformationTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ContactInformationTitle, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Adres")
+        @Html.TextAreaFor(x => x.ContactInformationAddress, new { @class = "ckeditor" }) <br/>
+        @Html.ValidationMessageFor(x => x.ContactInformationAddress, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Yol Tarifi")
+        @Html.TextAreaFor(x => x.ContactInformationDirection, new { @class = "ckeditor" }) <br/>
+        @Html.Hidden("Oluşturma Tarihi")
+        @Html.HiddenFor(x => x.CreatedDate, new { @class = "form-control" }) <br/>
+        @Html.Hidden("Durumu")
+        @Html.HiddenFor(x => x.Status, new { @class = "form-control" }) <br/>
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

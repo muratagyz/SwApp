@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppUI", "SwAppUI\SwAppUI.csproj", "{C562BD74-B1F6-488C-904B-3E4E204016D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppAPI", "SwAppAPI\SwAppAPI.csproj", "{6D3B107C-B456-49A6-8EC4-67686C574DEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppData", "SwAppData\SwAppData.csproj", "{C90ADDDC-8BCB-401A-8FAA-F94B0522C4B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppViewModel", "SwAppViewModel\SwAppViewModel.csproj", "{28283326-AB02-454E-A82E-EC8E2AA83421}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppService", "SwAppService\SwAppService.csproj", "{C9F8E02C-F0D0-41F3-BECD-5B87587AA8F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwAppPanel", "SwAppPanel\SwAppPanel.csproj", "{D5833064-DD47-471E-865D-9CC186A168DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C562BD74-B1F6-488C-904B-3E4E204016D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C562BD74-B1F6-488C-904B-3E4E204016D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C562BD74-B1F6-488C-904B-3E4E204016D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C562BD74-B1F6-488C-904B-3E4E204016D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D3B107C-B456-49A6-8EC4-67686C574DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D3B107C-B456-49A6-8EC4-67686C574DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D3B107C-B456-49A6-8EC4-67686C574DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D3B107C-B456-49A6-8EC4-67686C574DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90ADDDC-8BCB-401A-8FAA-F94B0522C4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90ADDDC-8BCB-401A-8FAA-F94B0522C4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90ADDDC-8BCB-401A-8FAA-F94B0522C4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90ADDDC-8BCB-401A-8FAA-F94B0522C4B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28283326-AB02-454E-A82E-EC8E2AA83421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28283326-AB02-454E-A82E-EC8E2AA83421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28283326-AB02-454E-A82E-EC8E2AA83421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28283326-AB02-454E-A82E-EC8E2AA83421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F8E02C-F0D0-41F3-BECD-5B87587AA8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F8E02C-F0D0-41F3-BECD-5B87587AA8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F8E02C-F0D0-41F3-BECD-5B87587AA8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F8E02C-F0D0-41F3-BECD-5B87587AA8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5833064-DD47-471E-865D-9CC186A168DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5833064-DD47-471E-865D-9CC186A168DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5833064-DD47-471E-865D-9CC186A168DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5833064-DD47-471E-865D-9CC186A168DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FFEE0A1-7022-40ED-9C25-6F47899328F4}
+	EndGlobalSection
+EndGlobal

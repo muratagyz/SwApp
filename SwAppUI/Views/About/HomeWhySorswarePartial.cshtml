@@ -1,0 +1,18 @@
+﻿@model SwAppViewModel.MultiUI.AboutMultiModel
+
+@foreach (var item in Model.HomeWhySorswareUI)
+{
+    <div class="col-md-4 col-12  carousel-block-card-about mt-4 mt-md-0">
+        <div class="row">
+            <img src="~/@item.HomeWhySorswareSubImageUrl" class="img-fluid carousel-block-img-about"/>
+        </div>
+        <div class="row carousel-block-title-about">
+            <p class="text-center text-md-start mb-0">@Html.Raw(item.HomeWhySorswareSubTitle)</p>
+        </div>
+        <div class="row carousel-block-text-about">
+            <p class="text-center text-md-start">
+                @Html.Raw(item.HomeWhySorswareSubDetails)
+            </p>
+        </div>
+    </div>
+}

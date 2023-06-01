@@ -1,0 +1,21 @@
+﻿@model SwAppViewModel.Panel.HomeWhySorswareVM
+
+@using (Html.BeginForm("HomeWhySorswareUpdate", "HomeWhySorsware", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Hidden("ID")
+        @Html.HiddenFor(x => x.Id, new { @class = "form-control" })<br/>
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.HomeWhySorswareSubTitle, new { @class = "form-control" }) <br/>
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.HomeWhySorswareSubDetails, new { @class = "ckeditor" }) <br/>
+        @Html.Hidden("Oluşturma Tarihi")
+        @Html.HiddenFor(x => x.CreatedDate, new { @class = "form-control" }) <br/>
+        @Html.Hidden("Durumu")
+        @Html.HiddenFor(x => x.Status, new { @class = "form-control" }) <br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        @Html.HiddenFor(x => x.HomeWhySorswareSubImageUrl)
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

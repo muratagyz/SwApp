@@ -1,0 +1,55 @@
+﻿@model SwAppViewModel.MultiUI.HomeMultiModel
+@{
+    var x = 0;
+}
+<div class="container my-5">
+    <div class="row px-5 p-md-0">
+        @foreach (var item in Model.HomeProjectWorkUI)
+        {
+            @if (x % 2 == 0)
+            {
+                <div class="col-md-5 property-card p-5 box-shadow-custom mb-5 ">
+                    <div class="property-card-title">
+                        <h3>@item.HomeProjectWorkSubTitle</h3>
+                    </div>
+                    <div class="property-card-desc pt-4">
+                        <h4>
+                            @Html.Raw(item.HomeProjectWorkSubDetails)
+                        </h4>
+                    </div>
+                    <div class="property-card-icon pt-4">
+                        <img src="~/pic/prop-card-img1.png" class="img-fluid"/>
+                        <img src="~/pic/prop-card-img2.png" class="img-fluid"/>
+                        <img src="~/pic/prop-card-img3.png" class="img-fluid"/>
+                    </div>
+                    <div class="property-card-text pt-4">
+                        <h4>Daha Fazla ></h4>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            }
+            else
+            {
+                <div class="col-md-5 property-card box-shadow-custom p-5 my-5 mt-md-0">
+                    <div class="property-card-title">
+                        <h3>@item.HomeProjectWorkSubTitle</h3>
+                    </div>
+                    <div class="property-card-desc pt-4">
+                        <h4>
+                            @Html.Raw(item.HomeProjectWorkSubDetails)
+                        </h4>
+                    </div>
+                    <div class="property-card-icon pt-4">
+                        <img src="~/pic/prop-card-img1.png" class="img-fluid"/>
+                        <img src="~/pic/prop-card-img2.png" class="img-fluid"/>
+                        <img src="~/pic/prop-card-img3.png" class="img-fluid"/>
+                    </div>
+                    <div class="property-card-text pt-4">
+                        <h4>Daha Fazla ></h4>
+                    </div>
+                </div>
+            }
+            x++;
+        }
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@model SwAppViewModel.Panel.HomeWhySorswareVM
+
+@using (Html.BeginForm("HomeWhySorswareCreate", "HomeWhySorsware", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form form-group">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.HomeWhySorswareSubTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.HomeWhySorswareSubTitle, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Detay")
+        @Html.TextAreaFor(x => x.HomeWhySorswareSubDetails, new { @class = "ckeditor" }) <br/>
+        @Html.ValidationMessageFor(x => x.HomeWhySorswareSubDetails, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Resim Url")<br/>
+        @Html.TextBox("formFile", "", new { type = "file" }) <br/><br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

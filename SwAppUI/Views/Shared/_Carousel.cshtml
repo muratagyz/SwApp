@@ -1,0 +1,61 @@
+﻿@model SwAppViewModel.MultiUI.HomeMultiModel
+@{
+    var x = 0;
+}
+<div class="carousel slide container-fluid carousel-edit" data-bs-ride="carousel" id="carousel">
+    <div class="container">
+        <div class="row nextprev justify-content-end">
+            <div class="col-md-2 col-6 text-right">
+                <button data-bs-slide="prev" data-bs-target="#carousel" type="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                </button> -
+                <button data-bs-slide="next" data-bs-target="#carousel" type="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="carousel-inner">
+            @foreach (var item in Model.HomeSliderUI)
+            {
+                @if (x == 0)
+                {
+                    <div class="carousel-item active">
+                        <div class="carousel-caption">
+                            <div class="row" style="vertical-align:middle;align-items:center;">
+                                <div class="col-md-5 text-left carousel-text">
+                                    @Html.Raw(item.HomeSliderTitle)<br/>
+                                    @Html.Raw(item.HomeSliderDetails)
+                                    <br/>
+                                    <button class="btn btn-light btn-carousel form-control">Daha Fazla Bilgi</button>
+                                </div>
+                                <div class="col-md-7 mt-md-0 mt-5 img-none-280">
+                                    <img src="../@item.HomeSliderImageUrl" class="img-fluid"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="carousel-item">
+                        <div class="carousel-caption">
+                            <div class="row" style="vertical-align:middle;align-items:center;">
+                                <div class="col-md-5 text-left carousel-text">
+                                    @Html.Raw(item.HomeSliderTitle)<br/>
+                                    @Html.Raw(item.HomeSliderDetails)
+                                    <br/>
+                                    <button class="btn btn-light btn-carousel form-control">Daha Fazla Bilgi</button>
+                                </div>
+                                <div class="col-md-7 mt-md-0 mt-5 img-none-280">
+                                    <img src="../@item.HomeSliderImageUrl" class="img-fluid"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                x++;
+            }
+
+        </div>
+    </div>
+</div>

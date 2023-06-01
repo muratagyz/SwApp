@@ -1,0 +1,27 @@
+﻿@model SwAppViewModel.MultiUI.HomeMultiModel
+
+<div class="justify-content-end">
+    <div class="bg-light px-4 carousel-block box-shadow-custom">
+        <div class="row">
+            <div class="col-12 pb-5 pb-md-4">
+                <div class="row card-container">
+                    <h1 class="header-carousel-block">Neden Sorsware?</h1>
+                </div>
+                <div class="row mt-4 card-container">
+                    @foreach (var item in Model.HomeWhySorswareUI)
+                    {
+                        <div class="col-md-4 col-12 px-4 carousel-block-card mt-4 mt-md-0">
+                            <div class="row">
+                                <img src="~/@item.HomeWhySorswareSubImageUrl" class="img-fluid carousel-block-img"/>
+                            </div>
+                            <div class="row carousel-block-title">@Html.Raw(item.HomeWhySorswareSubTitle)</div>
+                            <div class="row carousel-block-text">
+                                @Html.Raw(item.HomeWhySorswareSubDetails)
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

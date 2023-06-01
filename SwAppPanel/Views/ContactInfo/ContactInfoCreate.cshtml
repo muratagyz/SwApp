@@ -1,0 +1,14 @@
+﻿@model SwAppViewModel.Panel.ContactInfoVM
+
+@using (Html.BeginForm("ContactInfoCreate", "ContactInfo", FormMethod.Post))
+{
+    <div class="form form-group">
+        @Html.Label("Başlık")
+        @Html.TextBoxFor(x => x.OfficeLocationName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.OfficeLocationName, "", new { @class = "text-danger" })<br/>
+        @Html.Label("Detay")
+        @Html.TextBoxFor(x => x.OfficeLocationNumber, new { @class = "form-control" }) <br/>
+        @Html.ValidationMessageFor(x => x.OfficeLocationNumber, "", new { @class = "text-danger" })<br/>
+        <button class="btn btn-success">Ekle</button>
+    </div>
+}

@@ -1,0 +1,44 @@
+﻿@model SwAppViewModel.MultiUI.HomeMultiModel
+@{
+    var x = 2;
+}
+<div class="container mt-5 references-container">
+    <div class="row text-center mt-5">
+        <div class="col-12">
+            <h5 class="reference-smallheading mb-4">Bize Güvenen Markalar</h5>
+            <h1 class="reference-bigheading">Referanslar</h1>
+        </div>
+    </div>
+    @foreach (var item in Model.ProjectUI)
+    {
+        @if (x % 2 == 0)
+        {
+            <div class="row my-5 text-center text-md-start reference-row px-4 px-md-0">
+                <div class="col-md-5">
+                    <p class="reference-title mb-4">@item.ProjectUrl</p>
+                    <span class="reference-subtitle">@item.ProjectCategory</span>
+                    <h2 class="reference-big-subtitle mb-5">@Html.Raw(item.ProjectDetails)</h2>
+                    <button class="btn btn-reference">Daha Fazla Bilgi</button>
+                </div>
+                <div class="col-md-7">
+                    <img src="~/@item.ProjectImageUrl" class="img-fluid mt-5"/>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row my-5 text-center text-md-end reference-row px-4 px-md-0">
+                <div class="col-md-7">
+                    <img src="~/@item.ProjectImageUrl" class="img-fluid mt-3 mt-md-0"/>
+                </div>
+                <div class="col-md-5">
+                    <p class="reference-title mb-4">@item.ProjectUrl</p>
+                    <span class="reference-subtitle">@item.ProjectCategory</span>
+                    <h2 class="reference-big-subtitle mb-5" style="float:right;">@Html.Raw(item.ProjectDetails)</h2>
+                    <button class="btn btn-reference" style="float:right;">Daha Fazla Bilgi</button>
+                </div>
+            </div>
+        }
+        x++;
+    }
+</div>

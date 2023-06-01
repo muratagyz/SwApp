@@ -1,0 +1,40 @@
+﻿@model List<SwAppViewModel.Panel.UserVM>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Başlık</th>
+        <th scope="col">Detay</th>
+        <th scope="col">Resim Url</th>
+        <th scope="col">Oluşturma Tarihi</th>
+        <th scope="col">Güncelleme Tarihi</th>
+        <th scope="col">Durum</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.UserName</td>
+            <td>@item.Role</td>
+            <td>@item.UpdatedDate</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="/User/UserDelete/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-danger">Durumunu Değiştir</button>
+                </a>
+            </td>
+            <td>
+                <a href="/User/UserRoleUpdate/@item.Id" style="color:white;">
+                    <button type="button" class="btn btn-warning">Rolünü Güncelle</button>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
